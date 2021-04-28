@@ -9,6 +9,11 @@ if [[ "${KUBECTL_VER}" != "" ]]; then
   -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 fi
 
+if [[ ! -e ~/.kube/config ]]; then
+    mkdir -p ~/.kube
+    touch ~/.kube/config
+fi
+
 echo $3 > ~/.kube/config
 
 echo ">>> Executing command <<<"
