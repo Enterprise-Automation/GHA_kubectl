@@ -1,0 +1,14 @@
+name: 'k8s-deploy'
+description: 'Deploys resources to kubernetes'
+inputs:
+  command:
+    description: 'command to run'
+    required: true
+  kubectl:
+    description: 'kubectl version'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.kubectl }}
