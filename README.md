@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Kubectl
-        uses: enterpriseautomation/GHA_kubectl@master
+        uses: Enterprise-Automation/GHA_kubectl@master
         with:
           kubectl: 1.18.2
           command: |
