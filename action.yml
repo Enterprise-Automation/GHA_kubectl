@@ -4,6 +4,9 @@ inputs:
   command:
     description: 'command to run'
     required: true
+  kubeconfig:
+    required: true
+    description: 'kube config'
   kubectl:
     description: 'kubectl version'
 runs:
@@ -12,3 +15,4 @@ runs:
   args:
     - ${{ inputs.command }}
     - ${{ inputs.kubectl }}
+    - ${{ inputs.kubeconfig }}

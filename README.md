@@ -15,9 +15,8 @@ jobs:
         uses: Enterprise-Automation/GHA_kubectl@master
         with:
           kubectl: 1.18.2
+          kubeconfig: ${{ secrets.kubeconfig }}
           command: |
-            echo "Run conftest"
-            kustomize build test/kustomize | conftest test -p test/policy -
-            echo "Run kubeval"
-            helmv3 template ./charts/test | kubeval --strict
+            echo "Get pods"
+            kubectl get pods --all-namespaces
 ```
