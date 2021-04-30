@@ -13,8 +13,8 @@ if [[ ! -e ~/.kube/config ]]; then
     mkdir -p ~/.kube
     touch ~/.kube/config
 fi
-out="$($3)"
-echo $out > ~/.kube/config
+
+echo "$3" > ~/.kube/config
 
 echo ">>> Executing command <<<"
 echo ""
